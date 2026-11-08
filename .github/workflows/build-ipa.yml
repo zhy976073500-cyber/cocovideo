@@ -1,0 +1,48 @@
+# 手机编辑器 iOS：云端出未签名 IPA（与 CocoWall 同一套路）
+# 位置：把本仓库推到 GitHub 后，这个文件在 .github/workflows/build-ipa.yml
+# 本机 Linux VM 没有 macOS/Xcode，出不了包，所以出包全靠这个 workflow。
+name: Build 手机编辑器 IPA
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync Capacitor iOS project
+        # 关键一步：在 macOS 上跑 pod install，把 Filesystem/Share 插件
+        # 的原生代码装进 App.xcworkspace；同时把 www/ 同步进 App。
+        run: npx cap sync ios
+
+      - name: Build (unsigned)
+        run: |
+          xcodebuild build \
+            -project ios/App/App.xcodeproj \
+            -scheme App \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build/DerivedData \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+
+      - name: Package IPA
+        run: |
+          mkdir -p build/Payload
+          cp -R build/DerivedData/Build/Products/Release-iphoneos/App.app build/Payload/
+          cd build && zip -qr 手机编辑器-unsigned.ipa Payload
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MobileEditor-iOS-IPA
+          path: build/手机编辑器-unsigned.ipa
