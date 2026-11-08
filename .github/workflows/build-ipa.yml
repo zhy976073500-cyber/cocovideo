@@ -27,9 +27,13 @@ jobs:
         run: npx cap sync ios
 
       - name: Build (unsigned)
+        # 注意：必须用 workspace 不能用 xcodeproj——Capacitor 是 CocoaPods 装的，
+        # 只有 workspace 才包含 Pods 工程、才能找到 Capacitor 模块。
+        # 用 -project 编译会在 AppDelegate.swift:2 的 import Capacitor 处报
+        # "Unable to resolve module dependency: 'Capacitor'"（exit code 65）。
         run: |
           xcodebuild build \
-            -project ios/App/App.xcodeproj \
+            -workspace ios/App/App.xcworkspace \
             -scheme App \
             -configuration Release \
             -sdk iphoneos \
