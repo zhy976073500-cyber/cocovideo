@@ -1,6 +1,6 @@
 {
-  "name": "mobile-editor",
-  "version": "1.0.1",
+  "name": "cocovideo",
+  "version": "1.0.2",
   "description": "CocoVideo - 交互壁纸编辑器 iOS App (Capacitor 封装)",
   "private": true,
   "scripts": {

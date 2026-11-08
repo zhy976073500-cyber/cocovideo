@@ -8,7 +8,7 @@
 ## 基本信息
 
 - App 名：CocoVideo
-- 包名（Bundle ID）：`com.coco.mobileeditor`（没撞 CocoWall 的 `com.coco.cocowall`）
+- 包名（Bundle ID）：`com.coco.cocovideo`（没撞 CocoWall 的 `com.coco.cocowall`）
 - 版本：1.0.0（build 1）
 - 最低系统：iOS 17.0（跟 CocoWall 一致）
 - 封装：Capacitor 7.6.10（WebView 壳 + 两个官方插件）
@@ -56,7 +56,7 @@ WKWebView 里会弹系统照片选择器，`Info.plist` 已加
 这台 Linux VM 没有 macOS/Xcode，本地只能搭工程、验不来编译。
 出包走 GitHub Actions，跟 CocoWall 的 `ci/build-ipa.yml` 同一套路：
 
-1. Sage 在 GitHub 新建一个空仓库（比如 `mobile-editor`，Public 即可；
+1. Sage 在 GitHub 新建一个空仓库（比如 `cocovideo`，Public 即可；
    cc 推不上去，GitHub 403，跟 CocoWall 当时一样，得 Sage 手动建仓）；
 2. 把本目录全部内容推到该仓库根目录（`node_modules/`、`build/` 不用推，
    已在 `.gitignore` 里）；
