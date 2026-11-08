@@ -1,0 +1,10 @@
+{
+	"appId": "com.coco.mobileeditor",
+	"appName": "手机编辑器",
+	"webDir": "www",
+	"backgroundColor": "#000000",
+	"packageClassList": [
+		"FilesystemPlugin",
+		"SharePlugin"
+	]
+}
