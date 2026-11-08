@@ -1,13 +1,13 @@
-# 手机编辑器 iOS App
+# CocoVideo iOS App
 
-把 side chat 里的网页版「手机编辑器」包成 iOS App（IPA），侧载装到 iPhone 上用。
+把 side chat 里的网页版「CocoVideo」包成 iOS App（IPA），侧载装到 iPhone 上用。
 编辑器本身是我们自己重写的网页版（背景 1 张 + 浮动图最多 3 层、位置/大小/旋转/
 不透明度关键帧、锁屏/解锁/睡眠三态、锚点、晃动/回弹、导出 .tendies），
 没有搬 CAPlayground 的代码（它是 CC BY-NC-SA，只许非商业）。
 
 ## 基本信息
 
-- App 名：手机编辑器
+- App 名：CocoVideo
 - 包名（Bundle ID）：`com.coco.mobileeditor`（没撞 CocoWall 的 `com.coco.cocowall`）
 - 版本：1.0.0（build 1）
 - 最低系统：iOS 17.0（跟 CocoWall 一致）
@@ -60,9 +60,9 @@ WKWebView 里会弹系统照片选择器，`Info.plist` 已加
    cc 推不上去，GitHub 403，跟 CocoWall 当时一样，得 Sage 手动建仓）；
 2. 把本目录全部内容推到该仓库根目录（`node_modules/`、`build/` 不用推，
    已在 `.gitignore` 里）；
-3. 仓库里点 Actions → Build 手机编辑器 IPA → Run workflow；
+3. 仓库里点 Actions → Build CocoVideo IPA → Run workflow；
 4. 跑完在 Artifacts 里下载 `MobileEditor-iOS-IPA`，得到
-   `手机编辑器-unsigned.ipa`（未签名）。
+   `CocoVideo-unsigned.ipa`（未签名）。
 
 跑 workflow 前不用做任何改动：`npm ci` → `npx cap sync ios`
 （在 macOS 上跑 `pod install`，装 Filesystem/Share 原生代码）
@@ -74,7 +74,7 @@ WKWebView 里会弹系统照片选择器，`Info.plist` 已加
 2. 把未签名 IPA 传到手机（隔空投送 / 文件 App / 电脑传都行）；
 3. 在 SideStore/AltStore 里打开 IPA 安装，第一次装完去
    设置 → 通用 → VPN 与设备管理，信任自己的 Apple ID 证书；
-4. 打开「手机编辑器」就能用；免费 Apple ID 签的 App 7 天过期，
+4. 打开「CocoVideo」就能用；免费 Apple ID 签的 App 7 天过期，
    到期前在 SideStore 里点刷新续签即可（跟 CocoWall 的侧载方式一样）。
 
 ## 真机上还要验的（还没验过，等 Sage 拿真机走一遍）
