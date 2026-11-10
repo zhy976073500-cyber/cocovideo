@@ -9,7 +9,7 @@
 
 - App 名：CocoVideo
 - 包名（Bundle ID）：`com.coco.cocovideo`（没撞 CocoWall 的 `com.coco.cocowall`）
-- 版本：1.0.0（build 1）
+- 版本：1.0.3（build 4）
 - 最低系统：iOS 17.0（跟 CocoWall 一致）
 - 封装：Capacitor 7.6.10（WebView 壳 + 两个官方插件）
 - 签名：未签名 IPA，拿 Apple ID 侧载（id 签），不需要付费开发者账号
