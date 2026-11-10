@@ -1,5 +1,5 @@
 /**
- * CocoVideo iOS 封装桥接（capacitor-bridge.js）
+ * CocoStudio iOS 封装桥接（capacitor-bridge.js）
  *
  * 作用只有一个：接管编辑器导出 .tendies 时的浏览器下载。
  * 编辑器本身用 <a download> + blob URL 触发下载，这在桌面浏览器能用，
