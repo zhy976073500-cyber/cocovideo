@@ -1,7 +1,7 @@
 {
   "name": "cocovideo",
-  "version": "1.0.3",
-  "description": "CocoVideo - 交互壁纸编辑器 iOS App (Capacitor 封装)",
+  "version": "1.0.4",
+  "description": "CocoStudio - 交互壁纸编辑器 iOS App (Capacitor 封装)",
   "private": true,
   "scripts": {
     "sync": "npx cap sync ios",
