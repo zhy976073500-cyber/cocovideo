@@ -1,7 +1,7 @@
-# CocoVideo iOS：云端出未签名 IPA（与 CocoWall 同一套路）
+# CocoStudio iOS：云端出未签名 IPA（与 CocoWall 同一套路）
 # 位置：把本仓库推到 GitHub 后，这个文件在 .github/workflows/build-ipa.yml
 # 本机 Linux VM 没有 macOS/Xcode，出不了包，所以出包全靠这个 workflow。
-name: Build CocoVideo IPA
+name: Build CocoStudio IPA
 
 on:
   push:
@@ -44,9 +44,9 @@ jobs:
         run: |
           mkdir -p build/Payload
           cp -R build/DerivedData/Build/Products/Release-iphoneos/App.app build/Payload/
-          cd build && zip -qr CocoVideo-unsigned.ipa Payload
+          cd build && zip -qr CocoStudio-unsigned.ipa Payload
 
       - uses: actions/upload-artifact@v4
         with:
-          name: CocoVideo-iOS-IPA
-          path: build/CocoVideo-unsigned.ipa
+          name: CocoStudio-iOS-IPA
+          path: build/CocoStudio-unsigned.ipa
